@@ -32,6 +32,8 @@ unsafe class Program
     static delegate *unmanaged[Cdecl]<sbyte *> getNameFunc;
     static delegate *unmanaged[Cdecl]<sbyte *> getDescriptionFunc;
     static delegate *unmanaged[Cdecl]<int> executeFunc;
+    
+    // For LoadPluginLibrary for accessing native library
     static void *LoadPluginLibrary(string pluginPath)
     {
         void *handle = null;
@@ -58,6 +60,7 @@ unsafe class Program
         return handle;
     }
 
+    // GetProc for func_name like loaded native library with public methods
     static void *GetProc(void *handle, string func_name)
     {
         void *funcPtr = null;
@@ -82,6 +85,7 @@ unsafe class Program
         return funcPtr;
     }
 
+    // For Command uses with unmanaged function pointer accessibility 
     class Command
     {
         private void *_handle;
@@ -138,6 +142,7 @@ unsafe class Program
         }
     }
 
+    // There are magic of all native libraries loaded.
     static string[] pluginPaths
     {
         get
