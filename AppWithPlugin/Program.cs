@@ -1,9 +1,12 @@
-﻿namespace AppWithPlugin;
+namespace AppWithPlugin;
 
 using static DeafMan1983.ConvFunctions;
 
 using System.IO;
 using System.Runtime.InteropServices;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 unsafe class Program
 {
