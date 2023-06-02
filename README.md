@@ -16,3 +16,9 @@ If you add Windows and macOS interop sorry I am lazy for to add.
 
 Happy testing with loading native plugin libraries 
 PS: XlibPlugin supports only Linux/FreeBSD (But it is possible.) Thanks!
+
+For AppWithPlugin `dotnet publish -c Release -r <rid> --self-contained`<br />
+For (Hello, Other or Xlib)Plugin `dotnet publish -c Release -r <rid> -p:NativeLib=Shared --self-contained<br />
+And remember all native libraries copy and paste to `AppWithPlugin/bin/Release/net7.0/<rid>/native`
+  
+Enjoy your knowledges of native libraries 
